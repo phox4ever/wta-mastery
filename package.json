@@ -1,0 +1,25 @@
+{
+  "name": "wta-rest-api-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "chalk": "^5.2.0",
+    "chunk": "^0.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "figlet": "^1.5.2",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}

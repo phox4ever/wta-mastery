@@ -1,0 +1,12 @@
+@import "type.css";
+@import "form.css";
+
+@layer utilities {
+  #avatar-placeholder {
+    @apply bg-gray-200 w-40 h-40;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

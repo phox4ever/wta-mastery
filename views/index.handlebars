@@ -1,0 +1,77 @@
+<h2>Aufgabe 1: Business Code Development</h2>
+<p>
+  Entwickle die folgenden Funktionen:
+</p>
+<ol>
+  <li>Zufälliges Auswählen eines Namens</li>
+  <li>Autocomplete-Funktionalität</li>
+  <li>Statistik-Berechnung</li>
+</ol>
+<p class="mb-4">
+  Du findest vorgefertigte, leere Funktionen in der Datei <code>./data/business/mastery.js</code>.
+</p>
+<p class="mb-4">
+  Hier kannst du deine Funktionen testen:
+</p>
+
+<div class="grid grid-cols-2 gap-4">
+  <button id="randomNameButton" class="btn" type="button">Zufallsname</button>
+  <input id="randomNameOutput" type="text" id="random" name="random" placeholder="" disabled>
+
+  <div>
+    <input type="text" id="autocomplete" name="autocomplete" placeholder="Input" class="w-full mb-2">
+    <button id="autocompleteButton" class="btn w-full" type="button">Autocomplete</button>
+  </div>
+  <div>
+    <p class="mt-2">
+      Ausgabe: <span id="autocompleteOutput"></span>
+    </p>
+  </div>
+
+  <div>
+    <input type="text" id="statisticsInput" name="statistics" placeholder="Input" class="w-full mb-2">
+    <button id="statisticsButton" class="btn" type="button">Statistiken abrufen</button>
+  </div>
+  <div class="grid gap-4" style="grid-template-columns: 1fr 1em">
+    <div>
+      Länge des kürzesten, gefundenen Namen:
+    </div>
+    <div id="shortestName"></div>
+    <div>
+      Länge des längsten, gefundenen Namen:
+    </div>
+    <div id="longestName"></div>
+    <div>
+      Durchschnittliche Länge der gefundenen Namen:
+    </div>
+    <div id="avgName"></div>
+  </div>
+</div>
+
+<hr class="my-8">
+
+<h2>Aufgabe 2: APIs verwenden</h2>
+<p class="mb-4">
+  Generiere für den eingegebenen Vorname ein generisches Avatarbild mit Hilfe der kostenlosen API
+  <a href="https://avatar.oxro.io/" target="_blank">https://avator.oxro.io</a>. Du findest die
+  vorbereitete, leere Funktion in folgendem File: <code>./data/business/avatar.js</code>.
+</p>
+<p class="mb-4">
+  Hier kannst du deine Funktionen testen:
+</p>
+<div class="grid grid-cols-1 gap-4 w-80">
+  <input id="avatarInput" type="text" id="avatar" name="avatar" placeholder="Name">
+  <button id="avatarButton" class="btn" type="button">Avatar generieren</button>
+  <div>
+    <div id="avatarPlaceholder"></div>
+  </div>
+</div>
+
+<hr class="my-8">
+
+<h2>Aufgabe 3: </h2>
+<p>
+  Verwenden Sie die Offizielle Web API Ihres Browsers um eine Text To Speech Ausgabe zu machen (Firefox, Chrome) und
+  programmieren sie diese
+  in folgenden File aus: app/static/js/pages/speechapi.js
+</p>

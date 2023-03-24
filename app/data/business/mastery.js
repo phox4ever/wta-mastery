@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 
-const nameFile = './data/business/namen.txt';
+const nameFile = './app/data/business/namen.txt';
 /**
  * getRandomName
  * Lesen Sie aus der Namens liste (file Path oben) einen Zufälligen Namen aus und geben Sie diesen zurück.
@@ -18,7 +18,7 @@ export function getRandomName () {
   const data = fs.readFileSync(nameFile, "utf-8");
 
   // Text To Array:
-  const nameList = data.split("\r\n");
+  const nameList = data.split("\n");
 
   // Get Random Array Node:
   const listLength = nameList.length;
@@ -44,7 +44,7 @@ export function getAutoComplete (name) {
   const data = fs.readFileSync(nameFile, "utf-8");
 
   // Text To Array:
-  const nameList = data.split("\r\n");
+  const nameList = data.split("\n");
 
   // Get all Entrys from NameListe that beginns like name
   let autoComplete = [];
@@ -89,7 +89,7 @@ export function getStatistics (name) {
   const data = fs.readFileSync(nameFile, "utf-8");
 
   // Text To Array:
-  const nameList = data.split("\r\n");
+  const nameList = data.split("\n");
 
   // Get all Entrys from NameListe that beginns like name
   let avgLength = 0;

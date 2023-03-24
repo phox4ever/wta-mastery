@@ -24,10 +24,26 @@
   </main>
 
   <footer>
-    <div>
-      Footer
+    <div class="grid grid-cols-3 gap-8 text-sm">
+      <div>
+        <strong>Autor</strong>: Nicolas Haenni
+      </div>
+      <div class="text-center">
+        <strong>Version</strong>: 1.0.0 (HE20)
+      </div>
+      <div class="text-right">
+        <strong>Datum</strong>: <span id="date"></span>
+      </div>
     </div>
   </footer>
+  <script>
+    const date = new Date();
+    document.getElementById('date').innerHTML = date.toLocaleDateString('de-CH', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    });
+  </script>
   <script src="/js/mastery.js"></script>
   <script src="/js/agify.js"></script>
   <script src="/js/avatar.js"></script>

@@ -1,16 +1,14 @@
-import chalk from 'chalk';
-import figlet from 'figlet';
 import express from 'express';
 import bodyParser from 'body-parser';
-import Router from './routes/index.js';
+import Router from './app/routes/index.js';
 import { engine } from 'express-handlebars';
-import { printLogo, printDescription } from './utils/printUtils.js';
+import { printLogo, printDescription } from './app/utils/printUtils.js';
 
 const app = express();
 
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
-app.set('views', './views');
+app.set('views', './app/views');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

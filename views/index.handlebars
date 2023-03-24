@@ -14,23 +14,27 @@
   Hier kannst du deine Funktionen testen:
 </p>
 
-<div class="grid grid-cols-2 gap-4">
-  <button id="randomNameButton" class="btn" type="button">Zufallsname</button>
+<form id="randomNameForm" class="grid grid-cols-2 gap-4">
+  <button id="randomNameButton" class="btn" type="submit">Zufallsname</button>
   <input id="randomNameOutput" type="text" id="random" name="random" placeholder="" disabled>
-
+</form>
+<hr class="my-2">
+<form id="autocompleteForm" class="grid grid-cols-2 gap-4">
   <div>
     <input type="text" id="autocomplete" name="autocomplete" placeholder="Input" class="w-full mb-2">
-    <button id="autocompleteButton" class="btn w-full" type="button">Autocomplete</button>
+    <button id="autocompleteButton" class="btn w-full" type="submit">Autocomplete</button>
   </div>
   <div>
     <p class="mt-2">
       Ausgabe: <span id="autocompleteOutput"></span>
     </p>
   </div>
-
+</form>
+<hr class="my-2">
+<form id="statisticsForm" class="grid grid-cols-2 gap-4">
   <div>
     <input type="text" id="statisticsInput" name="statistics" placeholder="Input" class="w-full mb-2">
-    <button id="statisticsButton" class="btn" type="button">Statistiken abrufen</button>
+    <button id="statisticsButton" class="btn w-full" type="submit">Statistiken abrufen</button>
   </div>
   <div class="grid gap-4" style="grid-template-columns: 1fr 1em">
     <div>
@@ -46,32 +50,71 @@
     </div>
     <div id="avgName"></div>
   </div>
-</div>
+</form>
 
 <hr class="my-8">
 
 <h2>Aufgabe 2: APIs verwenden</h2>
+<h3>Teilaufgabe 1: Agify</h3>
+<p class="mb-4">
+  <a href="https://agify.io/" target="_blank">Agify.io</a> ist eine Spaß-API, die anhand eines
+  Namens schätzt, wie alt eine Person ist. Die API ist kostenlos und erlaubt 1000 Anfragen pro Tag.
+  Implementiere im File <code>./static/js/agify.js</code> eine Funktion, die den Namen als
+  Parameter übernimmt und die API aufruft.
+  Das Ergebnis der Schätzung soll im Feld unter diesem Text, welches die ID <code>agifyOutput</code>
+  trägt, ausgegeben werden.
+  <br>
+  <small>Tipp: Da es sich um ein Textfeld handelt, kannst du in JS einfach das <code>valu</code> setzen.</small>
+</p>
+<p class="mb-4">
+  Hier kannst du deine Funktion testen:
+</p>
+<div class="grid grid-cols-2 gap-4">
+  <form id="agifyForm">
+    <input id="agifyInput" type="text" id="agify" name="agify" placeholder="Name">
+    <button id="agifyButton" class="btn" type="submit">Alter schätzen</button>
+  </form>
+  <div>
+    <p>
+      Geschätztes Alter: <input id="agifyOutput" type="text" id="agifyOutput" name="agifyOutput" disabled>
+    </p>
+  </div>
+</div>
+
+<hr class="my-4">
+
+<h3>Teilaufgabe 2: Avatar</h3>
 <p class="mb-4">
   Generiere für den eingegebenen Vorname ein generisches Avatarbild mit Hilfe der kostenlosen API
-  <a href="https://avatar.oxro.io/" target="_blank">https://avator.oxro.io</a>. Du findest die
-  vorbereitete, leere Funktion in folgendem File: <code>./data/business/avatar.js</code>.
+  <a href="https://avatar.oxro.io/" target="_blank">https://avator.oxro.io</a>.<br>
+  Du findest die vorbereitete Funktion in der Datei <code>./data/business/avatar.js</code>.<br>
+  <small>Tipp: Die API liefert direkt eine Bild-Datei zurück, deine JavaScript-Funktion muss also
+  unten stehendes <code>img</code>-Element mit der ID <code>#avatarImage</code> mit dem generierten Bild befüllen.</small>
 </p>
 <p class="mb-4">
-  Hier kannst du deine Funktionen testen:
+  Hier kannst du deine Lösung testen:
 </p>
-<div class="grid grid-cols-1 gap-4 w-80">
-  <input id="avatarInput" type="text" id="avatar" name="avatar" placeholder="Name">
-  <button id="avatarButton" class="btn" type="button">Avatar generieren</button>
+<div class="grid grid-cols-2 gap-4">
+  <form id="avatarForm">
+    <input id="avatarInput" type="text" id="avatar" name="avatar" placeholder="Name" class="w-full mb-2">
+    <button id="avatarButton" class="btn w-full" type="submit">Avatar generieren</button>
+  </form>
   <div>
-    <div id="avatarPlaceholder"></div>
+    <img id="avatarImage" src="" alt="" class="bg-gray-100 w-40 h-40">
   </div>
 </div>
 
 <hr class="my-8">
 
-<h2>Aufgabe 3: </h2>
-<p>
-  Verwenden Sie die Offizielle Web API Ihres Browsers um eine Text To Speech Ausgabe zu machen (Firefox, Chrome) und
-  programmieren sie diese
-  in folgenden File aus: app/static/js/pages/speechapi.js
+<h2>Aufgabe 3: Browser-API nutzen</h2>
+<p class="mb-4">
+  Moderne Browser besitzen viele unterschiedliche APIs, die es ermöglichen, mit dem Browser zu interagieren.
+  Eine dieser APIs ist die <em>Web Speech API</em>, die es ermöglicht, Spracheingaben in Text umzuwandeln (Speech to Text),
+  aber auch Text als Sprache auszugeben (Text to Speech).<br>
+  Recherchiere, wie du in deinem Browser diese API nutzen kannst und schreibe eine Funktion, die den ihr übergebenen
+  Text ausgibt. Du findest die vorbereitete Funktion in der Datei <code>./static/js/speech.js</code>.
 </p>
+<form id="speechForm">
+  <input id="speechInput" name="speechInput" placeholder="Was soll ich sagen?" type="text" class="w-full mb-2">
+  <button id="speechButton" class="btn w-1/2">Sprich</button>
+</form>

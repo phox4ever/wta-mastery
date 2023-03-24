@@ -1,13 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const randomNameButton = document.querySelector('#randomNameButton');
-  randomNameButton.addEventListener('click', async () => {
+  const randomNameForm = document.querySelector('#randomNameForm');
+  const autocompleteForm = document.querySelector('#autocompleteForm');
+  const statisticsForm = document.querySelector('#statisticsForm');
+
+  randomNameForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
     const response = await fetch('/mastery/random');
     const data = await response.json();
     document.querySelector('#randomNameOutput').value = data.name;
   });
 
-  const autocompleteButton = document.querySelector('#autocompleteButton');
-  autocompleteButton.addEventListener('click', async () => {
+  autocompleteForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
     const input = document.querySelector('#autocomplete');
     const response = await fetch(`/mastery/autocomplete?name=${input.value}`);
     const data = await response.json();
@@ -15,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#autocompleteOutput').textContent = data.join(', ');
   });
 
-  const statisticsButton = document.querySelector('#statisticsButton');
-  statisticsButton.addEventListener('click', async () => {
+  statisticsForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
     const input = document.querySelector('#statisticsInput');
     const response = await fetch(`/mastery/statistics?q=${input.value}`);
     const data = await response.json();

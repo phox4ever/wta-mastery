@@ -1,13 +1,13 @@
 /**
  * getAvatar
- * 
+ *
  * Diese Funktion setzt den Wert des src-Attributes des #avatarImage
  * auf die korrekte URL zur Avatar-API, so dass das Avatar-Bild angezeigt wird.
- * 
- * @param {*} name 
+ *
+ * @param {*} name
  */
 async function getAvatar(name) {
-  // TODO
+  document.getElementById('avatarImage').src = 'https://avatar.oxro.io/avatar.svg?name=' + name;
 }
 
 /**

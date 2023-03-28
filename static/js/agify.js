@@ -7,7 +7,7 @@
  * @param {*} name
  */
 async function doRequest(name) {
-  let age = await fetch(`https://api.agify.io?name=${name}`).then((response) => {
+  await fetch(`https://api.agify.io?name=${name}`).then((response) => {
       return response.json();
     }).then((data) => {
       document.getElementById('agifyOutput').value = data.age;

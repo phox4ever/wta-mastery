@@ -7,7 +7,12 @@
  * @param {*} name
  */
 async function doRequest(name) {
-  // TODO
+  let age = await fetch(`https://api.agify.io?name=${name}`).then((response) => {
+      return response.json();
+    }).then((data) => {
+      document.getElementById('agifyOutput').value = data.age;
+    }
+  );
 }
 
 /**

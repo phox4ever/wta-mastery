@@ -16,9 +16,19 @@ export function getRandomName () {
   // 2.) Text in Array umwandeln (Zeilenumbrüche werden entweder als "\n" oder als "\r\n" erkannt)
   // 3.) Zufälliges Arrayelement auslesen und zurückgeben
   let randomName = '';
+  let names = getNames();
+  randomName = names[Math.floor(Math.random() * names.length)];
 
   return randomName;
 };
+
+function getNames() {
+    let names = [];
+    fs.readFileSync(nameFile, 'utf-8').split(/\r?\n/).forEach((line) => {
+        names.push(line);
+    });
+    return names;
+}
 
 /**
  * getAutoComplette
@@ -33,6 +43,13 @@ export function getAutoComplete (query) {
   // Du darfst diese Funktion auch gerne in eine eigene Funktion auslagern, statt den Code zu duplizieren.
 
   let autoComplete = [];
+  let names = getNames();
+
+  names.forEach((name) => {
+        if (name.startsWith(query)) {
+            autoComplete.push(name);
+        }
+  });
 
   return autoComplete;
 };
@@ -53,9 +70,24 @@ export function getStatistics (query) {
     averageNameLength: 0, // Die Durchschnittslänge aller gefundenen Namen
   };
 
+  let count = 0;
   // Tipps:
   // 1. Zum Einlesen der Namen wird dieselbe Funktion wie oben benötigt.
   // 2. Zum Suchen von passenden Namen, wird ähnlicher Code wie in getAutoComplete benötigt.
+  getNames().forEach((name) => {
+    if (name.startsWith(query)) {
+        if (stat.minNameLength === 0 || name.length < stat.minNameLength) {
+            stat.minNameLength = name.length;
+        }
+        if (name.length > stat.maxNameLength) {
+            stat.maxNameLength = name.length;
+        }
+        stat.averageNameLength += name.length;
+        count++;
+    }
+  });
+
+  stat.averageNameLength = Math.round(stat.averageNameLength / count);
 
   return stat;
 };

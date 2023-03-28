@@ -7,7 +7,9 @@
  * @param {*} text 
  */
 async function speak(text) {
-  // TODO
+  var msg = new SpeechSynthesisUtterance();
+  msg.text = text;
+  window.speechSynthesis.speak(msg);
 }
 
 /**
